@@ -1,0 +1,14 @@
+<section class="bg-white py-16">
+  <div class="container-x">
+    <div class="rounded-3xl bg-gradient-to-r from-brand to-accent px-8 py-12 md:py-14">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+        @for (s of stats; track s.label) {
+          <div>
+            <p class="font-display text-4xl md:text-5xl font-extrabold text-white">{{ s.value }}</p>
+            <p class="mt-2 text-sm font-medium text-white/80">{{ s.label }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

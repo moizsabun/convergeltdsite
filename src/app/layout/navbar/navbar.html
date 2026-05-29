@@ -1,0 +1,81 @@
+<header
+  class="fixed top-0 inset-x-0 z-50 bg-white transition-all duration-300"
+  [class.shadow-md]="scrolled()"
+  [class.py-2]="scrolled()"
+  [class.py-3]="!scrolled()"
+>
+  <nav class="container-x flex items-center justify-between">
+    <!-- Brand -->
+    <a routerLink="/" class="flex items-center" (click)="closeMenu()" aria-label="Converge home">
+      <img src="assets/img/logo.png" alt="Converge Digital Solutions" class="h-10 w-auto" />
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-1">
+      @for (link of links; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="!text-brand"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            class="px-3 py-2 rounded-md text-sm font-medium text-ink transition-colors hover:text-brand"
+            >{{ link.label }}</a
+          >
+        </li>
+      }
+    </ul>
+
+    <a
+      routerLink="/contact"
+      class="hidden md:inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark"
+      >Get Started</a
+    >
+
+    <!-- Mobile toggle -->
+    <button
+      type="button"
+      class="md:hidden grid place-items-center w-10 h-10 rounded-md text-ink"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu"
+    >
+      @if (menuOpen()) {
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      } @else {
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      }
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  @if (menuOpen()) {
+    <div class="md:hidden bg-white border-t border-line">
+      <ul class="container-x py-3 flex flex-col">
+        @for (link of links; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="text-brand"
+              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+              (click)="closeMenu()"
+              class="block px-2 py-3 text-base font-medium text-ink hover:text-brand"
+              >{{ link.label }}</a
+            >
+          </li>
+        }
+        <li class="pt-2">
+          <a
+            routerLink="/contact"
+            (click)="closeMenu()"
+            class="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white"
+            >Get Started</a
+          >
+        </li>
+      </ul>
+    </div>
+  }
+</header>

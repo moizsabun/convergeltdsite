@@ -1,3 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Global styles + design tokens */
 @import "tailwindcss";
+
+@theme {
+  /* Converge brand palette (from convergeltd.net) */
+  --color-navy: #473d3a; /* dark brown — used for dark sections/footer */
+  --color-navy-light: #5e514c;
+  --color-brand: #f1592a; /* signature orange */
+  --color-brand-dark: #d8431a;
+  --color-brand-light: #ff7e54;
+  --color-accent: #ff8a5c; /* warm light-orange accent */
+  --color-accent-dark: #ff774a;
+  --color-ink: #313030; /* headings */
+  --color-muted: #656262; /* body text */
+  --color-surface: #f8f8f8;
+  --color-line: #e7e7e7;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .container-x {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, var(--color-brand-light), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .animate-rise {
+    animation: rise 0.7s ease both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,53 @@
+<app-page-header
+  eyebrow="About us"
+  title="Engineering progress for ambitious teams"
+  subtitle="Converge is a technology company helping businesses transform ideas into reliable, scalable digital products and services."
+/>
+
+<section class="bg-white py-20 md:py-28">
+  <div class="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
+    <div>
+      <h2 class="font-display text-3xl font-extrabold text-navy">Who we are</h2>
+      <p class="mt-4 text-muted">
+        We're a team of engineers, designers and problem-solvers who believe
+        great technology should be dependable, accessible and built to last.
+        From startups to established enterprises, we partner with our clients to
+        ship products that make a real difference.
+      </p>
+      <p class="mt-4 text-muted">
+        Our work spans software development, cloud and DevOps, VoIP and call
+        center systems, web and SEO, and ongoing IT support — all delivered with
+        the same commitment to quality and care.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a routerLink="/services" class="inline-flex items-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-dark">Our services</a>
+        <a routerLink="/contact" class="inline-flex items-center rounded-full border border-line px-6 py-3 font-semibold text-navy transition hover:bg-surface">Contact us</a>
+      </div>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="rounded-2xl bg-surface p-6">
+        <p class="font-display text-3xl font-extrabold text-brand">Mission</p>
+        <p class="mt-2 text-sm text-muted">Boost the competitive pace of our clients by turning their ideas into highly functional products.</p>
+      </div>
+      <div class="rounded-2xl bg-surface p-6 sm:mt-8">
+        <p class="font-display text-3xl font-extrabold text-accent">Vision</p>
+        <p class="mt-2 text-sm text-muted">To be the technology partner businesses trust to build their future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-surface py-20 md:py-24">
+  <div class="container-x">
+    <h2 class="font-display text-3xl font-extrabold text-navy text-center">Our values</h2>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (v of values; track v.title) {
+        <div class="rounded-2xl border border-line bg-white p-6">
+          <h3 class="font-bold text-navy">{{ v.title }}</h3>
+          <p class="mt-2 text-sm text-muted">{{ v.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

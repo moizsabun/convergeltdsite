@@ -1,0 +1,68 @@
+<section
+  class="sticky top-0 z-0 min-h-screen flex items-center overflow-hidden bg-navy"
+>
+  <!-- Decorative background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy"></div>
+  <div
+    class="absolute -top-32 -right-24 w-[40rem] h-[40rem] rounded-full bg-brand/20 blur-3xl"
+  ></div>
+  <div
+    class="absolute -bottom-40 -left-24 w-[34rem] h-[34rem] rounded-full bg-accent/20 blur-3xl"
+  ></div>
+  <div
+    class="absolute inset-0 opacity-[0.15]"
+    style="background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px); background-size: 56px 56px;"
+  ></div>
+
+  <div class="container-x relative z-10 py-28 md:py-32">
+    <div class="max-w-3xl animate-rise">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-slate-200 backdrop-blur"
+      >
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        Technology &amp; Digital Solutions
+      </span>
+
+      <h1
+        class="mt-6 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white"
+      >
+        We turn ideas into
+        <span class="text-gradient">high-performing</span>
+        products.
+      </h1>
+
+      <p class="mt-6 text-lg text-slate-300 max-w-2xl">
+        Converge boosts the competitive pace of our clients by transforming
+        ambitious ideas into reliable, scalable software, cloud and
+        communication solutions — built to grow with your business.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          routerLink="/services"
+          class="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 font-semibold text-white shadow-lg shadow-brand/30 transition hover:bg-brand-dark"
+        >
+          Explore Services
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a
+          routerLink="/contact"
+          class="inline-flex items-center rounded-full border border-white/20 px-7 py-3 font-semibold text-white transition hover:bg-white/10"
+        >
+          Talk to us
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        @for (b of badges; track b) {
+          <span class="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-sm text-slate-300">{{ b }}</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-400 z-10">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </div>
+</section>
